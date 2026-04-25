@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coffee House | Responsive Design</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
+
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevents side scrolling */
+        }
+
+        /* Responsive Navigation */
+        header {
+            background: #332111;
+            color: white;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #d4a373;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        /* Mobile Menu adjustment */
+        @media (max-width: 600px) {
+            nav ul li a {
+                margin-left: 10px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Hero Section - Auto Fit Screen */
+        .hero {
+            height: 100vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 8vw, 3.5rem); /* Dynamic font size */
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            background: #d4a373;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 25px;
+            transition: 0.3s;
+        }
+
+        /* Menu Section - Responsive Grid */
+        #menu {
+            padding: 80px 5%;
+            background: #fefae0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #332111;
+        }
+
+        .menu-container {
+            display: grid;
+            /* Auto-fit columns based on screen width */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 10px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 60px 20px;
+            text-align: center;
+            background: #332111;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #25180c;
+            color: #888;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Coffee<span>House</span></div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Start Your Day with <br> <span>Perfect Coffee</span></h1>
+            <p>Freshly brewed taste in every cup. Best quality beans sourced locally.</p>
+            <a href="#menu" class="btn">View Menu</a>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2 class="section-title">Our Menu</h2>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="https://unsplash.com" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>Rich espresso with thick foam.</p>
+                <span>$4.99</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://unsplash.com" alt="Latte">
+                <h3>Iced Latte</h3>
+                <p>Sweet and creamy over ice.</p>
+                <span>$5.49</span>
+            </div>
+            <div class="menu-item">
+                <img src="https://unsplash.com" alt="Espresso">
+                <h3>Americano</h3>
+                <p>Smooth shots of bold espresso.</p>
+                <span>$3.99</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Visit Our Shop</h2>
+        <p>Email: info@coffeehouse.com</p>
+        <p>Open: 8:00 AM - 10:00 PM</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CoffeeHouse - All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
